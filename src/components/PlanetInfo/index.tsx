@@ -1,11 +1,15 @@
 import React from 'react';
-import { Container, Info } from './styles';
+import { Container, Info, Title } from './styles';
 
 import img from '../../images/planets/KASHYYYK.png'
 
 const PlanetInfo: React.FC = () => {
   return (
     <Container>
+      <Title>
+        <h1>KASHYYYK</h1>
+      </Title>
+
       <img src={img} alt="planet" />
 
       <Info>
