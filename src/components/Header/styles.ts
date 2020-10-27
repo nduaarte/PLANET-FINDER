@@ -18,12 +18,17 @@ export const Logo = styled.div`
   img {
     width: 120px;
     height: 50px;
+
+    @media(max-width: 600px) {
+    width: 80px;
+    height: 35px;
+  }
   }
 `;
 
 export const Search = styled.div`
   display: flex;
-  width: 50%;
+  width: 60%;
   margin: 0 20px;
   
   input {
@@ -35,7 +40,6 @@ export const Search = styled.div`
     padding: 5px;
     border-radius: 4px;
     font-size: 15px;
-    font-weight: 600;
 
     &:focus {
       width: 50%;
@@ -63,5 +67,9 @@ export const Sign = styled.div`
   span {
     font-size: 12px;
     margin-left: 8px;
+  }
+
+  @media(max-width: 600px) {
+    display: none;
   }
 `;
