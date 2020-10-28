@@ -1,20 +1,28 @@
+export interface RootState {
+  currentInfoApiReducer: any;
+  planetName: string,
+  climate: string,
+  population: number,
+  diameter: number,
+}
+
 const INITIAL_STATE = {
-  planetName: '',
-  climate: '',
+  planetName: 'Desconhecido',
+  climate: 'Desconhecido',
   population: 0,
   diameter: 0,
 };
 
-export default function currentInfoApi(state = INITIAL_STATE, action: any) {
+export default function currentInfoApiReducer(state = INITIAL_STATE, action: { type: any; value: any; }) {
   switch (action.type) {
     case 'UPDATE_PLANET_NAME':
-      return { ...state, planetName: action.value }
+      return { ...state, planetName: action.value };
     case 'UPDATE_CLIMATE':
-      return { ...state, climate: action.value }
+      return { ...state, climate: action.value };
     case 'UPDATE_POPULATION':
-      return { ...state, population: action.value }
+      return { ...state, population: action.value };
     case 'UPDATE_DIAMETER':
-      return { ...state, diameter: action.value }
+      return { ...state, diameter: action.value };
     default:
       return state;
   }

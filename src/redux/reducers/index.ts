@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import currentInfoApi from './currentInfoApi';
+import currentInfoApiReducer from './currentInfoApiReducer';
 
-export const Reducers = combineReducers({
-  currentInfoApi: currentInfoApi
+export const rootReducer = combineReducers({
+  currentInfoApiReducer: currentInfoApiReducer,
 });
