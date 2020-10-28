@@ -1,18 +1,19 @@
 import React from 'react';
 import GlobalStyles from './styles/GlobalStyles'
-import { Provider } from 'react-redux';
-import { store } from './redux/store';
+import useApiRequest from './services/apiRequest';
 
 import Header from './components/Header';
 import PlanetInfo from './components/PlanetInfo';
 
 function App() {
+  useApiRequest();
+  
   return (
-    <Provider store={store}>
+    <>
       <Header />
       <PlanetInfo />
       <GlobalStyles />
-    </Provider>
+    </>
   );
 }
 
