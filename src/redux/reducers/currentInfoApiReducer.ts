@@ -4,6 +4,7 @@ export interface RootState {
   climate: string,
   population: number,
   diameter: number,
+  planetListArr: Array<object>;
 }
 
 const INITIAL_STATE = {
@@ -11,6 +12,7 @@ const INITIAL_STATE = {
   climate: 'Desconhecido',
   population: 0,
   diameter: 0,
+  planetListArr: []
 };
 
 export default function currentInfoApiReducer(state = INITIAL_STATE, action: { type: any; value: any; }) {
@@ -23,6 +25,8 @@ export default function currentInfoApiReducer(state = INITIAL_STATE, action: { t
       return { ...state, population: action.value };
     case 'UPDATE_DIAMETER':
       return { ...state, diameter: action.value };
+    case 'UPDATE_PLANET_LIST_ARR':
+      return { ...state, planetListArr: [...state.planetListArr, action.value] };
     default:
       return state;
   }
@@ -42,4 +46,8 @@ export function actionUpdatePopulation(value: number) {
 
 export function actionUpdateDiameter(value: number) {
   return { type: 'UPDATE_DIAMETER', value };
+};
+
+export function actionUpdatePlanetListArr(value: Array<object>) {
+  return { type: 'UPDATE_PLANET_LIST_ARR', value };
 };

@@ -1,17 +1,16 @@
 import React from 'react';
-import { Container, Logo, Search, PlanetIcon, Sign } from './styles';
+import { Container, Search, Sign } from './styles';
 
-import logo from '../../images/logo_star_wars.png';
+import logo from '../../images/icons/logo_star_wars.svg';
+import r2d2 from '../../images/icons/r2d2.svg';
 
 const Header: React.FC = () => {
   return (
     <Container>
-      <Logo>
-        <img src={logo} alt="logo" />
-      </Logo>
+      <img src={logo} alt="logo" />
 
       <Search>
-        <PlanetIcon />
+        <img src={r2d2} alt="r2d2" />
         <input type="text" placeholder="Buscar planeta..." />
       </Search>
 

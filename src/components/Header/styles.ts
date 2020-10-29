@@ -1,28 +1,19 @@
 import styled from 'styled-components';
-import { IoMdPlanet } from 'react-icons/io';
 
 export const Container = styled.div`
   display: flex;
   width: 100%;
-  padding: 15px 40px;
+  padding: 0 40px;
 
   background: var(--primary);
 
   align-items: center;
   justify-content: space-between;
-`;
 
-export const Logo = styled.div`
-  display: flex;
-
+  
   img {
-    width: 120px;
-    height: 50px;
-
-    @media(max-width: 600px) {
-    width: 80px;
-    height: 35px;
-  }
+    width: 6%;
+    height: 6%;
   }
 `;
 
@@ -30,6 +21,15 @@ export const Search = styled.div`
   display: flex;
   width: 60%;
   margin: 0 20px;
+
+  img {
+    display: flex;
+    width: 40px;
+    height: 40px;
+
+    margin: 0 5px;
+    color: var(--yellow2);
+  }
   
   input {
     width: 100%;
@@ -49,14 +49,6 @@ export const Search = styled.div`
   }
 `;
 
-export const PlanetIcon = styled(IoMdPlanet)`
-  display: flex;
-  width: 34px;
-  height: 34px;
-
-  margin: 0 5px;
-  color: var(--yellow2);
-`;
 
 export const Sign = styled.div`
   display: flex;
