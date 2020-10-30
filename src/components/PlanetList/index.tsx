@@ -1,30 +1,25 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Container } from './styles';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/reducers/currentInfoApiReducer';
 
 const PlanetList: React.FC = () => {
   const planetListArr = useSelector((state: RootState) => state.currentInfoApiReducer.planetListArr);
-  let element;
-  
+  let importImg = 13;
 
-  //parei no useref console.log do browser
-  useEffect(() => {
-    element = (
-      planetListArr.map((item: { name: string }, index: number) => (
+  const element = (
+    planetListArr.map((item: { name: string }, index: number) => (
+      importImg = require(`../../images/planetsCard/${item.name}`),
+      <div>
         <p key={index}>{item.name}</p>
-      ))
-    );
-
-    console.log(planetListArr);
-  }, [planetListArr]);
-
+        <img src="" alt=""/>
+      </div>
+    ))
+  );
 
   return (
     <Container>
-      <div>
-        {element}
-      </div>
+      {element}
     </Container>
   );
 }

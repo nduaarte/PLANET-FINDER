@@ -1,9 +1,9 @@
 export interface RootState {
   currentInfoApiReducer: any;
-  planetName: string,
-  climate: string,
-  population: number,
-  diameter: number,
+  planetName: string;
+  climate: string;
+  population: number;
+  diameter: number;
   planetListArr: Array<object>;
 }
 
@@ -25,7 +25,7 @@ export default function currentInfoApiReducer(state = INITIAL_STATE, action: { t
       return { ...state, population: action.value };
     case 'UPDATE_DIAMETER':
       return { ...state, diameter: action.value };
-    case 'UPDATE_PLANET_LIST_ARR':
+    case 'ADD_IN_PLANET_LIST_ARR':
       return { ...state, planetListArr: [...state.planetListArr, action.value] };
     default:
       return state;
@@ -49,5 +49,5 @@ export function actionUpdateDiameter(value: number) {
 };
 
 export function actionUpdatePlanetListArr(value: Array<object>) {
-  return { type: 'UPDATE_PLANET_LIST_ARR', value };
+  return { type: 'ADD_IN_PLANET_LIST_ARR', value };
 };

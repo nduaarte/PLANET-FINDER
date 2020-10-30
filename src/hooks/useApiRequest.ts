@@ -6,11 +6,11 @@ async function useApiRequest() {
   const api = axios;
 
   try {
-    for(let id=1; id <= 10; id++) {
+    for(let id=1; id <= 60; id++) {
       const response = await api(`https://swapi.dev/api/planets/${id}/`);
-      const planets = response.data
+      const planet = response.data
 
-      dispatch({ type: 'UPDATE_PLANET_LIST_ARR', value: planets });
+      dispatch({ type: 'ADD_IN_PLANET_LIST_ARR', value: planet });
     } 
 
     console.log(`API consultada com sucesso!`);
