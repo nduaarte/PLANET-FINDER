@@ -11,9 +11,9 @@ function useApiRequest() {
       for(let id=1; id <= 20; id++) {
         const response = await api(`https://swapi.dev/api/planets/${id}/`);
         const planet = response.data;
-  
+
         // Condição necessária, pois há um planeta na API que está sem registros.
-        if(planet.name != 'unknown') 
+        if(planet.name !== 'unknown') 
           dispatch({ type: 'ADD_IN_PLANET_LIST_ARR', value: planet });
       } 
   
