@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import backgroundImage from '../../images/test.png';
+import backgroundImage from '../../../images/bgImage.png';
 
 export const Container = styled.div`
   display: flex;
@@ -8,11 +8,14 @@ export const Container = styled.div`
 
   align-items: center;
   flex-wrap: wrap;
-  padding: 0 75px;
+
+  padding: 0 50px;
 
   width: 100%;
   height: 100%;
   background-image: url(${backgroundImage});
+  background-attachment: fixed;
+  background-position: center;
 `;
 
 export const PlanetCard = styled.div`
@@ -49,7 +52,8 @@ export const ContainerTitle = styled.div`
   justify-content: flex-end;
 
   background-color: var(--secondary);
-  border-radius: 6px;
+  border-radius: 4px;
+  border-left: 4px solid var(--yellow2);
 
   z-index: 1;
   width: 200px;

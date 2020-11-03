@@ -6,11 +6,9 @@ export const Container = styled.div`
   padding: 0 40px;
 
   background: var(--primary);
-
   align-items: center;
   justify-content: space-between;
 
-  
   img {
     width: 6%;
     height: 6%;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Search, Sign } from './styles';
 
-import logo from '../../images/icons/logo_star_wars.svg';
-import r2d2 from '../../images/icons/r2d2.svg';
+import logo from '../../../images/icons/logo_star_wars.svg';
+import r2d2 from '../../../images/icons/r2d2.svg';
 
 const Header: React.FC = () => {
   return (

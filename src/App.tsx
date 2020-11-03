@@ -1,20 +1,24 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import GlobalStyles from './styles/GlobalStyles'
 import useApiRequest from './hooks/useApiRequest';
 
-import Header from './components/Header';
-import PlanetList from './components/PlanetList';
-//import PlanetInfo from './components/PlanetInfo';
+import Landing from './pages/Landing';
+import Planets from './pages/Planets';
+import PlanetInfo from './pages/PlanetInfo';
 
 function App() {
   useApiRequest();
 
   return (
-    <>
-      <Header />
-      <PlanetList />
+    <BrowserRouter>
+  
+      <Route path="/" component={Landing} />
+      <Route path="/planetSearch" component={Planets}/>
+      <Route path="/:planetName" component={PlanetInfo}/>
+   
       <GlobalStyles />
-    </>
+    </BrowserRouter>
   );
 }
 
