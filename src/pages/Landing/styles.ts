@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-interface Props {
-  img: string;
-}
+
 
 export const Container = styled.div`
   display: flex;

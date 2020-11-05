@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom'
+import { Router, Route, Switch } from 'react-router-dom'
 import GlobalStyles from './styles/GlobalStyles'
 import useApiRequest from './hooks/useApiRequest';
 
@@ -11,14 +11,15 @@ function App() {
   useApiRequest();
 
   return (
-    <BrowserRouter>
-  
-      <Route path="/" component={Landing} />
-      <Route path="/planetSearch" component={Planets}/>
-      <Route path="/:planetName" component={PlanetInfo}/>
-   
+    <>
+      <Switch>
+        <Route path="/" exact component={Landing} />
+        <Route path="/planetSearch" component={Planets}/>
+        <Route path="/planetName" component={PlanetInfo}/>
+      </Switch>
+
       <GlobalStyles />
-    </BrowserRouter>
+    </>
   );
 }
 

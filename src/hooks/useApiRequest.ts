@@ -25,9 +25,3 @@ function useApiRequest() {
 }
 
 export default useApiRequest;
-
-// Código talvez reutilizável.
-// dispatch({ type: 'UPDATE_PLANET_NAME', value: data.name });
-// dispatch({ type: 'UPDATE_CLIMATE', value: data.climate });
-// dispatch({ type: 'UPDATE_POPULATION', value: data.population });
-// dispatch({ type: 'UPDATE_DIAMETER', value: data.diameter });

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import img1 from '../../images/landingImages/bobafet.jpg';
 import img2 from '../../images/landingImages/darthmaul.jpg';
@@ -27,6 +28,12 @@ const Landing: React.FC = () => {
     }, 5000)
   }, []);
 
+  
+  const history = useHistory();
+  function navigate() {
+    history.push('/planetSearch');
+  }
+
   return (
     <Container>
       <img src={image} alt="image" />
@@ -39,7 +46,7 @@ const Landing: React.FC = () => {
           criaturas habitam cada planeta.
       </p>
 
-        <button type="button">Começar</button>
+      <button onClick={navigate}>Começar</button>
       </div>
     </Container>
   );

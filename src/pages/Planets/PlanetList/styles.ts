@@ -35,13 +35,10 @@ export const PlanetCard = styled.div`
 
     :hover {
       filter: saturate(100%);
+      cursor: pointer;
     }
 
     transition: 200ms;
-  }
-
-  :hover {
-    cursor: pointer;
   }
 `;
 
