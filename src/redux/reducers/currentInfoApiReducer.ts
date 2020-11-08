@@ -1,17 +1,13 @@
 export interface RootState {
   currentInfoApiReducer: any;
   planetName: string;
-  climate: string;
-  population: number;
-  diameter: number;
+  inputCurrentPlanet: string;
   planetListArr: Array<object>;
 }
 
 const INITIAL_STATE = {
   planetName: 'Desconhecido',
-  climate: 'Desconhecido',
-  population: 0,
-  diameter: 0,
+  inputCurrentPlanet: '',
   planetListArr: []
 };
 
@@ -19,12 +15,8 @@ export default function currentInfoApiReducer(state = INITIAL_STATE, action: { t
   switch (action.type) {
     case 'UPDATE_PLANET_NAME':
       return { ...state, planetName: action.value };
-    case 'UPDATE_CLIMATE':
-      return { ...state, climate: action.value };
-    case 'UPDATE_POPULATION':
-      return { ...state, population: action.value };
-    case 'UPDATE_DIAMETER':
-      return { ...state, diameter: action.value };
+    case 'UPDATE_INPUT_CURRENT_PLANET':
+      return { ...state, inputCurrentPlanet: action.value };
     case 'ADD_IN_PLANET_LIST_ARR':
       return { ...state, planetListArr: [...state.planetListArr, action.value] };
     default:
@@ -36,18 +28,11 @@ export function actionUpdatePlanetName(value: string) {
   return { type: 'UPDATE_PLANET_NAME', value };
 };
 
-export function actionUpdateClimate(value: string) {
-  return { type: 'UPDATE_CLIMATE', value };
-};
-
-export function actionUpdatePopulation(value: number) {
-  return { type: 'UPDATE_POPULATION', value };
-};
-
-export function actionUpdateDiameter(value: number) {
-  return { type: 'UPDATE_DIAMETER', value };
+export function actionUpdateInputCurrentPlanet(value: string) {
+  return { type: 'UPDATE_INPUT_CURRENT_PLANET', value };
 };
 
 export function actionUpdatePlanetListArr(value: Array<object>) {
   return { type: 'ADD_IN_PLANET_LIST_ARR', value };
 };
+

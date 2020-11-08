@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Info, Title } from './styles';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/reducers/currentInfoApiReducer';
@@ -9,13 +9,18 @@ import img3 from '../../images/planets/img6.png'
 
 const PlanetInfo: React.FC = () => {
   const planetName = useSelector((state: RootState) => state.currentInfoApiReducer.planetName);
-  const population = useSelector((state: RootState) => state.currentInfoApiReducer.population);
-  const climate = useSelector((state: RootState) => state.currentInfoApiReducer.climate);
-  const diameter = useSelector((state: RootState) => state.currentInfoApiReducer.diameter);
+  const planetListArr = useSelector((state: RootState) => state.currentInfoApiReducer.planetListArr);
+
+  const [count, setCount] = useState(Number);
+  useEffect(() => {
+    for(let i = 0; i < planetListArr.length; i++) {
+      if(planetListArr[i].name === planetName)
+        setCount(i);
+    }
+  }, []);
 
   const imagesArr = [img1, img2, img3];
   const ramdomImgSelect = Math.floor(Math.random() * imagesArr.length);
-  
   return (
     <Container>
       <Title>
@@ -25,9 +30,9 @@ const PlanetInfo: React.FC = () => {
       <img src={imagesArr[ramdomImgSelect]} alt="planet" />
 
       <Info>
-        <h2>População: {population}</h2>
-        <span>Clima: {climate}</span>
-        <span>Diametro: {diameter}</span>
+        <h2>População: {planetListArr[count].name}</h2>
+        <span>Clima: {planetListArr[count].climate}</span>
+        <span>Diametro: {planetListArr[count].diameter}</span>
       </Info>
     </Container>
   );
