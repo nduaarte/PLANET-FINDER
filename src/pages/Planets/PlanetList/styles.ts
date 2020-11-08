@@ -8,14 +8,7 @@ export const Container = styled.div`
 
   align-items: center;
   flex-wrap: wrap;
-
   padding: 0 50px;
-
-  width: 100%;
-  height: 100%;
-  background-image: url(${backgroundImage});
-  background-attachment: fixed;
-  background-position: center;
 `;
 
 export const PlanetCard = styled.div`
@@ -50,7 +43,7 @@ export const ContainerTitle = styled.div`
 
   background-color: var(--secondary);
   border-radius: 4px;
-  border-left: 4px solid var(--yellow2);
+  border-left: 4px solid var(--yellow);
 
   z-index: 1;
   width: 200px;

@@ -17,7 +17,7 @@ const PlanetList: React.FC = () => {
     history.push('/planetName');
   }
 
-  const search = useSelector((state: RootState) => state.currentInfoApiReducer.inputPlanetCurrent);
+  const search = useSelector((state: RootState) => state.currentInfoApiReducer.inputCurrentPlanet);
   const [filteredPlanetsName, setFilteredPlanetsName] = useState([]);
   useEffect(() => {
     const planetsNames = planetListArr.map((planet: {name: string}) => planet.name);
@@ -25,9 +25,9 @@ const PlanetList: React.FC = () => {
     const filteredPlanetsName = planetsNames.filter((planetName: string) => {
       return planetName.toLowerCase().includes(search.toLowerCase());
     });
-
+    
     setFilteredPlanetsName(filteredPlanetsName);
-  }, []);
+  }, [search]);
 
   return (
     <Container>      

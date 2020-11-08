@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 import GlobalStyles from './styles/GlobalStyles'
-import useApiRequest from './hooks/useApiRequest';
+import useApiRequest from './services/useApiRequest';
 
 import Landing from './pages/Landing';
 import Planets from './pages/Planets';
