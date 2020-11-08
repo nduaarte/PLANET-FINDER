@@ -8,7 +8,7 @@ function useApiRequest() {
 
   async function request() {
     try {
-      for(let id=1; id <= 60; id++) {
+      for(let id=1; id <= 20; id++) {
         const response = await api(`https://swapi.dev/api/planets/${id}/`);
         const planet = response.data;
 

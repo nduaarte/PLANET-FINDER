@@ -1,17 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../redux/reducers/currentInfoApiReducer';
 import { useHistory } from 'react-router-dom';
 
 import { Container, PlanetCard, ContainerTitle } from './styles';
 import { planetImagesArr } from './importImagesPlanets';
-
-interface planetProps {
-  name: string;
-  climate: string;
-  population: number;
-  diameter: number;
-}
 
 const PlanetList: React.FC = () => {
   const planetListArr = useSelector((state: RootState) => state.currentInfoApiReducer.planetListArr);
@@ -28,20 +21,30 @@ const PlanetList: React.FC = () => {
     history.push('/planetName');
   }
 
+  const search = 'aa';
+  const [filteredPlanetsName, setFilteredPlanetsName] = useState([]);
   useEffect(() => {
-    
-  
+    const planetsNames = planetListArr.map((planet: {name: string}) => planet.name);
+
+    const filteredPlanetsName = planetsNames.filter((planetName: string) => {
+      return planetName.toLowerCase().includes(search.toLowerCase());
+    });
+
+    setFilteredPlanetsName(filteredPlanetsName);
   }, []);
 
   return (
     <Container>      
-      {planetListArr.map((planet: planetProps, index: number) => (
+      {filteredPlanetsName.map((planetName: string, index: number) => (
         count++,
         <PlanetCard key={index}>
-          <img onClick={() => dispatchToNavigate(planet.name, planet.climate, planet.population, planet.diameter)} src={planetImagesArr[count]} alt={planet.name} />
-   
+          
+          <img onClick={() => dispatchToNavigate(
+            planetListArr.name, planetListArr.climate, planetListArr.population, planetListArr.diameter
+          )} src={planetImagesArr[count]} alt={planetListArr.name}/>
+
           <ContainerTitle>
-            <h2>{planet.name}</h2>
+            <h2>{planetName}</h2>
           </ContainerTitle>
         </PlanetCard>
       ))}
