@@ -1,7 +1,7 @@
 
   <h1 align='center'>PLANET FINDER</h1>
   <p align='center'>Aplicação para procurar planetas da saga Star Wars e ver algumas informações rápidas.</p>
-  
+
   ![](https://media3.giphy.com/media/J5eV9ZRqAOrUROepmp/giphy.gif)
   
   <h2>Testar</h2>
@@ -9,7 +9,7 @@
   - Abra o projeto no terminal
   - Digite: npm install 
   - E depois: npm start
-Nota: ao rodar pela primeira vez, pode demorar algum tempo até a consulta da API ser concluída, você pode ver nas logs quando isso vai ocorrer.
+  - Nota: ao rodar pela primeira vez, pode demorar algum tempo até a consulta da API ser concluída, você pode ver nas logs quando isso vai ocorrer.
   
   <h3>Tecnologias usadas</h3>
   
