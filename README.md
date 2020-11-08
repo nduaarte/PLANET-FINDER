@@ -17,4 +17,4 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [Styled-Components](https://styled-components.com/)
 - [Redux](https://redux.js.org/)
-- [Axios](https://github.com/axios/axios);
+- [Axios](https://github.com/axios/axios)
