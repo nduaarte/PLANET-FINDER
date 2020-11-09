@@ -1,6 +1,6 @@
 
   <h1 align='center'>PLANET FINDER</h1>
-Aplicação que consulta a API do Star Wars e mostrar info dos planetas.
+<p>Aplicação que consulta a API do Star Wars e mostrar info dos planetas.</p>
 
   ![](https://media3.giphy.com/media/J5eV9ZRqAOrUROepmp/giphy.gif)
   
