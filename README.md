@@ -9,7 +9,7 @@
   - Abra o projeto no terminal
   - Digite: npm install 
   - E depois: npm start
-  - Nota: ao rodar pela primeira vez, pode demorar algum tempo até a consulta da API ser concluída, você pode ver nas logs quando isso vai ocorrer.
+  - Nota: ao rodar pela primeira vez, pode demorar alguns seugundos até a consulta da API ser concluída, você pode ver nas logs quando isso vai ocorrer.
   
   <h3>Tecnologias usadas</h3>
   
