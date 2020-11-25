@@ -1,4 +1,3 @@
-
 # PLANET FINDER
 Aplicação que consulta a API do Star Wars e mostra ligeiras informações dos planetas.
 
